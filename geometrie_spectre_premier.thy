@@ -3,34 +3,34 @@ theory geometrie_spectre_premier
 begin
 
 (****************************************************************)
-(* TABLE DES MATIÈRES – SCRIPT HOL : GÉOMÉTRIE DU SPECTRE       *)
+(* TABLE DES MATIERES – SCRIPT HOL : GEOMETRIE DU SPECTRE       *)
 (*                                                              *)
 (* I.  RAPPORT SPECTRAL 1/2 – FONDATIONS                        *)
-(*     1. Définitions des suites SA et SB (type nat)            *)
-(*     2. Validité des formes générales pour n > 0              *)
-(*     3. Définition du Rapport Spectral RsP                    *)
+(*     1. Definitions des suites SA et SB (type nat)            *)
+(*     2. Validite des formes generales pour n > 0              *)
+(*     3. Definition du Rapport Spectral RsP                    *)
 (*     4. Preuve formelle du ratio constant 1/2                 *)
-(*     5. Points de résonance (29, 31, 37, 41)                  *)
-(*     6. Validation numérique sur les indices z1 à z25         *)
+(*     5. Points de resonance (29, 31, 37, 41)                  *)
+(*     6. Validation numrique sur les indices z1 à z25         *)
 (*                                                              *)
 (* II. EXTENSIONS AUX RAPPORTS 1/3 ET 1/4                       *)
-(*     1. Modèle spectral 1/3 – Premier 227                     *)
-(*     2. Modèle spectral 1/4 – Premier 947                     *)
+(*     1. Modele spectral 1/3 – Premier 227                     *)
+(*     2. Modele spectral 1/4 – Premier 947                     *)
 (*     3. Preuve du Rapport Spectral constant 1/3               *)
 (*     4. Preuve du Rapport Spectral constant 1/4               *)
 (*                                                              *)
-(* III. MÉTHODE SAVARD – UNIFICATION GÉNÉRALE                   *)
-(*     1. Les quatre équations spectrales (SA & SB réels)       *)
-(*        - Équations positives                                 *)
-(*        - Équations négatives                                 *)
-(*     2. Démonstration des suites négatives (n < 0)            *)
-(*        - Structure géométrique                               *)
+(* III. MeTHODE SAVARD – UNIFICATION GeNeRALE                   *)
+(*     1. Les quatre equations spectrales (SA & SB reels)       *)
+(*        - Equations positives                                 *)
+(*        -Equations negatives                                 *)
+(*     2. Demonstration des suites negatives (n < 0)            *)
+(*        - Structure geometrique                               *)
 (*        - Exemples explicites SA_neg                          *)
-(*        - Correspondance rang ↔ premier négatif               *)
-(*     3. Définition générale du Digamma calculé                *)
+(*        - Correspondance rang ↔ premier negatif               *)
+(*     3. Definition generale du Digamma calcule                *)
 (*        - Version positive                                    *)
 (*        - Version négative                                    *)
-(*     4. Définition générale du Gap spectral (Méthode Savard)  *)
+(*     4. Définition generale du Gap spectral (Methode Savard)  *)
 (*                                                              *)
 (* IV. ÉCART ENTRE DEUX NOMBRES PREMIERS                        *)
 (*     1. Exemple 1 : Écart entre 23 et 7                       *)
@@ -212,30 +212,30 @@ lemma relation_41:
   unfolding digamma_calc_def SA_def SB_def n41_def D41_def by simp
 
 (**************************************************************)
-(* SECTION : Modèle Spectral 1/4 – Définitions complètes      *)
+(* SECTION : Modele Spectral 1/4 – Definitions completes      *)
 (**************************************************************)
 
 text \<open>
-  Formes généralisées pour le rapport 1/4.
-  On suit les équations :
+  Formes generalisees pour le rapport 1/4.
+  On suit les equations :
     ((241/16)/12 * 4^n) - 4/3
     ((964/16)/12 * 4^n) - (3073 * (4/3))
 \<close>
 
-(* --- Définition des suites A_1_4 et B_1_4 --- *)
+(* --- Definition des suites A_1_4 et B_1_4 --- *)
 
-definition A_1_4 :: "nat ⇒ real" where
+definition A_1_4 :: "nat => real" where
   "A_1_4 n = ((241 / 16) / 12) * (4^n) - (4 / 3)"
 
-definition B_1_4 :: "nat ⇒ real" where
+definition B_1_4 :: "nat => real" where
   "B_1_4 n = ((964 / 16) / 12) * (4^n) - (3073 * (4 / 3))"
 
 text \<open>
-  Données numériques globales pour le modèle 1/4 :
+  Donnees numeriques globales pour le modele 1/4 :
   - Somme de la suite A : 1316180
   - Somme de la suite B : 5260628
   - Digamma : 65536
-  - Digamma calculé : 1316180 + 65536 = 1381716
+  - Digamma calcule : 1316180 + 65536 = 1381716
   - (5260628 - 1381716) / 4096 = 947 (premier)
 \<close>
 
@@ -257,7 +257,7 @@ lemma preuve_premier_947:
                 digamma_1_4_def digamma_calcule_1_4_def)
 
 (**************************************************************)
-(* SECTION : Modèle Spectral 1/3 – Définitions complètes      *)
+(* SECTION : Modele Spectral 1/3 – Définitions completes      *)
 (**************************************************************)
 
 text \<open>
@@ -267,10 +267,10 @@ text \<open>
     ((219/9)/12 * 3^n) - (487 * 1.5)
 \<close>
 
-definition A_1_3 :: "nat ⇒ real" where
+definition A_1_3 :: "nat => real" where
   "A_1_3 n = ((73 / 9) / 12) * (3^n) - 1.5"
 
-definition B_1_3 :: "nat ⇒ real" where
+definition B_1_3 :: "nat => real" where
   "B_1_3 n = ((219 / 9) / 12) * (3^n) - (487 * 1.5)"
 
 definition suite_A_1_3_somme :: real where
@@ -300,13 +300,13 @@ text \<open>
 
 (* Rapport spectral 1/3 *)
 
-definition RsP_1_3 :: "nat ⇒ nat ⇒ real" where
+definition RsP_1_3 :: "nat => nat => real" where
   "RsP_1_3 n1 n2 =
     (A_1_3 n1 - A_1_3 n2) /
     (B_1_3 n1 - B_1_3 n2)"
 
 theorem RsP_un_tiers_constant:
-  assumes "n1 > 0" and "n2 > 0" and "n1 ≠ n2"
+  assumes "n1 > 0" and "n2 > 0" and "n1 ~= n2"
   shows "RsP_1_3 n1 n2 = 1/3"
 proof -
   have diff_A:
@@ -335,13 +335,13 @@ qed
 
 (* Rapport spectral 1/4 *)
 
-definition RsP_1_4 :: "nat ⇒ nat ⇒ real" where
+definition RsP_1_4 :: "nat => nat => real" where
   "RsP_1_4 n1 n2 =
     (A_1_4 n1 - A_1_4 n2) /
     (B_1_4 n1 - B_1_4 n2)"
 
 theorem RsP_un_quart_constant:
-  assumes "n1 > 0" and "n2 > 0" and "n1 ≠ n2"
+  assumes "n1 > 0" and "n2 > 0" and "n1 ~= n2"
   shows "RsP_1_4 n1 n2 = 1/4"
 proof -
   have diff_A:
@@ -369,23 +369,18 @@ proof -
 qed
 
 (**************************************************************)
-(* Suites négatives – équations spectrales                    *)
+(* Suites negatives – equations spectrales                    *)
 (**************************************************************)
 
-text ‹
-  Équations spectrales pour les suites A et B associées aux
-  nombres premiers négatifs. L’indice n correspond au rang
-  spectral du nombre premier négatif (ex.: -3 = troisième
-  nombre premier négatif = -5).
-›
 
-definition SA_neg_eq :: "real ⇒ real" where
+
+definition SA_neg_eq :: "real => real" where
   "SA_neg_eq n = 3.25 * (2 powr n) - 2"
 
-definition SB_neg_eq :: "real ⇒ real" where
+definition SB_neg_eq :: "real => real" where
   "SB_neg_eq n = 6.5 * (2 powr n) - 66"
 
-definition digamma_neg_calc :: "real ⇒ real ⇒ real" where
+definition digamma_neg_calc :: "real => real => real" where
   "digamma_neg_calc n p = SB_neg_eq n - 64 * p"
 
 lemma digamma_neg_calc_equation_alt:
@@ -393,17 +388,17 @@ lemma digamma_neg_calc_equation_alt:
   unfolding digamma_neg_calc_def SB_neg_eq_def
   by (simp add: field_simps)
 (**************************************************************)
-(* Exemple complet : écart entre -19 et -5                    *)
+(* Exemple complet : ecart entre -19 et -5                    *)
 (**************************************************************)
 
-text ‹
+text \<open>
   Pour l’écart entre -19 et -5 :
-   • le premier suivant -5 est -7  → SA(-7)
-   • le rang spectral de -5 est -3 → SB(-3)
-   • le rang spectral de -19 est -8 → SB(-8)
-›
+    le premier suivant -5 est -7  -> SA(-7)
+    le rang spectral de -5 est -3 -> SB(-3)
+    le rang spectral de -19 est -8 -> SB(-8)
+\<close>
 
-(* Indices spectraux *)
+
 definition n_m7  :: real where "n_m7  = -7"   (* premier suivant -5 *)
 definition n_m3  :: real where "n_m3  = -3"   (* rang spectral de -5 *)
 definition n_m19 :: real where "n_m19 = -8"   (* rang spectral de -19 *)
@@ -429,17 +424,17 @@ definition D_m19_val :: real where
 
 
 (**************************************************************)
-(* Forme générale de l’écart négatif                          *)
+(* Forme generale de l'ecart negatif                          *)
 (**************************************************************)
 
 definition gap_neg_val ::
-  "real ⇒ real ⇒ real ⇒ real ⇒ real ⇒ real" where
+  "real => real => real => real => real => real" where
   "gap_neg_val A_next B_high D_high D_low dummy =
       (A_next - (B_high - D_high) - D_low) / 64"
 
 
 (**************************************************************)
-(* Lemme final : démonstration de l’écart -19 / -5            *)
+(* Lemme final : démonstration de l'écart -19 / -5            *)
 (**************************************************************)
 
 lemma gap_m19_m5:
@@ -453,12 +448,12 @@ lemma gap_m19_m5:
 (* Exemple complet : écart entre -31 et 17                    *)
 (**************************************************************)
 
-text ‹
+text \<open>
   Exemple mixte : quantité de nombres entre -31 et 17.
-  Le premier suivant -31 est -29 → SA(-29)
-  Le rang spectral de 17 est 8  → SB(8)
-  Le rang spectral de -31 est -11 → SB(-11)
-›
+  Le premier suivant -31 est -29  -> SA(-29)
+  Le rang spectral de 17 est 8    -> SB(8)
+  Le rang spectral de -31 est -11 -> SB(-11)
+\<close>
 
 (* Indices spectraux *)
 definition n_m29 :: real where "n_m29 = -10"   (* rang spectral de -29 *)
@@ -470,33 +465,33 @@ definition n_m31 :: real where "n_m31 = -11"   (* rang spectral de -31 *)
 (**************************************************************)
 
 definition SA_m29_val :: real where
-  "SA_m29_val = -40895 / 20480"     (* SA(-29) *)
+  "SA_m29_val = -40895 / 20480"     
 
 definition SB_p17_val :: real where
-  "SB_p17_val = 350"                (* SB(17) *)
+  "SB_p17_val = 350"                
 
 definition D_p17_val :: real where
-  "D_p17_val = -738"                (* Digamma(17) *)
+  "D_p17_val = -738"                
 
 definition SB_m31_val :: real where
-  "SB_m31_val = -1351615 / 20480"   (* SB(-31) *)
+  "SB_m31_val = -1351615 / 20480"   
 
 definition D_m31_val :: real where
-  "D_m31_val = 39280705 / 20480"    (* Digamma(-31) *)
+  "D_m31_val = 39280705 / 20480"   
 
 
 (**************************************************************)
-(* Forme générale de l’écart mixte                            *)
+(* Forme generale de l'ecart mixte                            *)
 (**************************************************************)
 
 definition gap_mix_val ::
-  "real ⇒ real ⇒ real ⇒ real ⇒ real ⇒ real" where
+  "real => real => real => real => real => real" where
   "gap_mix_val A_next B_high D_high D_low dummy =
       (A_next - (B_high - D_high) - D_low) / 64"
 
 
 (**************************************************************)
-(* Lemme final : démonstration de l’écart -31 / 17            *)
+(* Lemme final : démonstration de l'écart -31 / 17            *)
 (**************************************************************)
 
 lemma gap_m31_17:
@@ -508,13 +503,13 @@ lemma gap_m31_17:
 
 (****************************************************************)
 (*                                                              *)
-(*   Tous droits réservés.                                      *)
+(*   Tous droits reserves.                                      *)
 (*   Toute reproduction, diffusion ou utilisation commerciale    *)
-(*   de ce script est interdite sans l’autorisation écrite       *)
-(*   de l’auteur.                                               *)
+(*   de ce script est interdite sans l'autorisation ecrite       *)
+(*   de l'auteur.                                               *)
 (*                                                              *)
 (*   Auteur : Philippe Thomas Savard                            *)
-(*   Date   : Deux février deux mille vingt-deux                *)
+(*   Date   : Deux fevrier deux mille vingt-deux                *)
 (*                                                              *)
 (****************************************************************)
   end
