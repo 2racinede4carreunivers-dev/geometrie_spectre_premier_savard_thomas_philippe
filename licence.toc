@@ -1,0 +1,15 @@
+\babel@toc {english}{}\relax 
+\contentsline {section}{Version française}{3}{Doc-Start}%
+\contentsline {section}{\numberline {1}Présentation de la licence}{3}{section.1}%
+\contentsline {section}{\numberline {2}Résumé officiel de la licence}{3}{section.2}%
+\contentsline {subsection}{\numberline {2.1}Vous êtes autorisé à}{3}{subsection.2.1}%
+\contentsline {subsection}{\numberline {2.2}Vous devez}{3}{subsection.2.2}%
+\contentsline {subsection}{\numberline {2.3}Vous ne pouvez pas}{3}{subsection.2.3}%
+\contentsline {section}{\numberline {3}Texte légal complet}{4}{section.3}%
+\contentsline {section}{English Version}{5}{section.3}%
+\contentsline {section}{\numberline {4}License Overview}{5}{section.4}%
+\contentsline {section}{\numberline {5}Official License Summary}{5}{section.5}%
+\contentsline {subsection}{\numberline {5.1}You are allowed to}{5}{subsection.5.1}%
+\contentsline {subsection}{\numberline {5.2}You must}{5}{subsection.5.2}%
+\contentsline {subsection}{\numberline {5.3}You may not}{5}{subsection.5.3}%
+\contentsline {section}{\numberline {6}Full Legal Text}{6}{section.6}%

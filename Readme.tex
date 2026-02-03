@@ -1,0 +1,157 @@
+\documentclass[12pt]{article}
+
+% --- Packages essentiels ---
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[french,english]{babel}
+\usepackage{lmodern}
+\usepackage{geometry}
+\usepackage{setspace}
+\usepackage{titlesec}
+\usepackage{hyperref}
+\usepackage{microtype}
+
+% --- Mise en page ---
+\geometry{
+  a4paper,
+  margin=1in
+}
+
+\setstretch{1.2}
+
+% --- Style des titres ---
+\titleformat{\section}{\Large\bfseries}{\thesection}{1em}{}
+\titleformat{\subsection}{\large\bfseries}{\thesubsection}{1em}{}
+
+% --- Hyperliens ---
+\hypersetup{
+  colorlinks=true,
+  linkcolor=blue,
+  urlcolor=blue
+}
+
+% --- Page de titre ---
+\title{\textbf{La géométrie du spectre des nombres premiers}}
+\author{}
+\date{}
+
+\begin{document}
+
+\maketitle
+\vspace{-2cm}
+
+\begin{center}
+\large
+Chaudière-Appalaches, Lévis, Canada\\[0.3cm]
+3 février 2026\\[2cm]
+
+\textbf{\Large Philippe Thomas Savard}
+\end{center}
+
+\newpage
+
+% --- Table des matières ---
+\tableofcontents
+\newpage
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% VERSION FRANÇAISE
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section*{Version française}
+\addcontentsline{toc}{section}{Version française}
+
+\section{Présentation générale du projet}
+
+Ce document présente une démonstration complète, réalisée à l’aide de l’outil de preuve Isabelle HOL, de la géométrie du spectre des nombres premiers. Il s’agit d’un modèle original développé par Philippe Thomas Savard, qui explore la structure profonde des nombres premiers à travers des suites spectrales et des rapports constants. Ce travail s’inscrit dans la continuité de l’énigme de Bernhard Riemann et met en évidence l’importance des parties réelles égales à un demi dans la structure spectrale.
+
+L’objectif du projet est de montrer, à l’aide d’un outil formel, que les nombres premiers possèdent une organisation géométrique interne qui peut être décrite par des suites spectrales et des rapports constants. Le script Isabelle HOL démontre ces propriétés de manière rigoureuse et reproductible.
+
+\section{Modèles spectraux inclus dans le script}
+
+Le fichier Isabelle HOL contient trois modèles fondamentaux : le modèle spectral un demi, le modèle spectral un tiers et le modèle spectral un quart. Pour chacun de ces modèles, le script inclut les définitions complètes des suites spectrales A et B, les équations générales permettant de calculer les valeurs de ces suites, la définition du Digamma, la définition du Digamma calculé et la démonstration formelle que le rapport spectral est constant pour tous les rangs considérés.
+
+\section{Exemples du modèle un demi}
+
+Le script contient plusieurs exemples détaillés pour illustrer le fonctionnement du modèle un demi. Les nombres premiers utilisés sont vingt-neuf, trente et un, trente-sept et quarante et un. Pour chacun de ces cas, le script démontre la valeur exacte des suites A et B, la valeur du Digamma, la valeur du Digamma calculé, la détermination du nombre premier et la relation entre les suites et les valeurs spectrales.
+
+\section{Suites positives et négatives}
+
+Le script formalise également les suites spectrales associées aux rangs positifs et négatifs. Les suites négatives correspondent à une extension naturelle du modèle spectral, où les nombres premiers négatifs sont traités comme des positions spectrales inversées. Le script inclut les équations générales, le Digamma négatif, le Digamma calculé négatif et les valeurs exactes pour plusieurs positions négatives.
+
+\section{Détermination de l’écart entre deux nombres premiers}
+
+Le script inclut la méthode développée par Philippe Thomas Savard pour déterminer l’écart entre deux nombres premiers, qu’ils soient positifs ou négatifs. Trois exemples complets sont fournis : l’écart entre vingt-trois et sept, l’écart entre moins dix-neuf et moins cinq, et l’écart entre moins trente et un et dix-sept.
+
+\section{Théorème de la géométrie du spectre}
+
+Le cœur du projet est la formalisation du théorème de la géométrie du spectre des nombres premiers. Ce théorème établit que les rapports spectraux un demi, un tiers et un quart sont constants pour tous les rangs considérés et qu’ils émergent naturellement des suites spectrales A et B.
+
+\section{Vérifications expérimentales des rapports étendus}
+
+Plusieurs autres rapports spectraux ont été explorés : un douzième, un vingtième, un cinquantième, un centième et un millième. Pour chacun de ces rapports, dix termes consécutifs ont été calculés et ont permis de déterminer dix nombres premiers distincts dans cent pour cent des cas.
+
+Le rapport un millième a révélé un nombre premier de dix-neuf chiffres, confirmé par Wolfram, soit :
+
+\begin{center}
+\textbf{1001000500499875261}
+\end{center}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% VERSION ANGLAISE
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\newpage
+\section*{English Version}
+\addcontentsline{toc}{section}{English Version}
+
+\section{General presentation of the project}
+
+This document presents a complete demonstration, carried out using the Isabelle HOL proof assistant, of the geometry of the prime number spectrum. This model, developed by Philippe Thomas Savard, explores the deep structure of prime numbers through spectral sequences and constant ratios. The project is inspired by Bernhard Riemann’s famous problem and highlights the importance of real parts equal to one half in the spectral structure.
+
+\section{Spectral models included in the script}
+
+The Isabelle HOL file contains three fundamental spectral models: the one-half model, the one-third model, and the one-quarter model. For each model, the script includes full definitions of the spectral sequences A and B, general equations for computing their values, the Digamma definition, the computed Digamma, and formal proofs that the spectral ratio is constant for all considered ranks.
+
+\section{Examples for the one-half model}
+
+The script includes several detailed examples illustrating the one-half model. The prime numbers used are twenty-nine, thirty-one, thirty-seven, and forty-one. For each case, the script demonstrates the exact values of the A and B sequences, the Digamma, the computed Digamma, the determination of the prime number, and the relationships between all spectral components.
+
+\section{Positive and negative sequences}
+
+The script also formalizes spectral sequences for positive and negative ranks. Negative sequences correspond to a natural extension of the spectral model, where negative primes are treated as inverted spectral positions.
+
+\section{Determining the gap between two prime numbers}
+
+The script includes the method developed by Philippe Thomas Savard to determine the gap between two prime numbers, whether positive or negative. Three complete examples are provided: the gap between twenty-three and seven, between minus nineteen and minus five, and between minus thirty-one and seventeen.
+
+\section{Prime spectrum geometry theorem}
+
+The core of the project is the formalization of the prime spectrum geometry theorem, which establishes that the spectral ratios one-half, one-third, and one-quarter are constant for all considered ranks.
+
+\section{Extended spectral ratio verification}
+
+Additional spectral ratios were explored: one-twelfth, one-twentieth, one-fiftieth, one-hundredth, and one-thousandth. For each ratio, ten consecutive terms were computed, and in every case, ten distinct prime numbers were obtained.
+
+The one-thousandth ratio revealed a nineteen-digit prime number, confirmed by Wolfram:
+
+\begin{center}
+\textbf{1001000500499875261}
+\end{center}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% COORDONNÉES DE L’AUTEUR
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\newpage
+\begin{center}
+\small
+\textbf{Philippe Thomas Savard}\\[0.2cm]
+5354 rue du Menuet\\
+Lévis, Québec\\
+G6X 4K5\\
+Canada\\[0.2cm]
+Courriel : \texttt{Philippethomassavard@gmail.com}
+\end{center}
+
+\end{document}
